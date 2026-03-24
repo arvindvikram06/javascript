@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header{
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    font-size: 30px;
+    font-weight: bolder;
+    background-color: #A8DF8E;
+
+}
+
+main{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    min-height: 90vh;
+    background-color: #F0FFDF;
+}
+
+main li{
+    list-style: none;
+
+}
+
+#task-list{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.task_item{
+    padding: 20px;
+    width: 500px;
+    min-height: 100px;
+    background-color: #A8DF8E;;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    border-radius: 20px;
+}
+
+.task_item div{
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    padding-left: 10%;
+    overflow-y: hidden;
+}
+
+
+
+
+
+
+input {
+    border: 2px solid transparent;
+    width: 250px;
+    height: 45px;
+    padding: 0 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 2px 0px 20px rgb(0, 0,0.2);
+}
+input:focus {
+    border-color: #00acc1;
+    background-color: #ffffff;
+}
+
+
+input:hover {
+    background-color: #A8DF8E;
+}
+
+
+input::placeholder {
+    color: #777;
+    font-style: italic;
+}
+
+
+button{
+    width: 150px;
+    height: 50px;
+    font-size: 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #FF3838;
+    transform: translateY(2px);
+    transition: all 0.5s ease-in-out;
+    font-weight:bolder;
+    font-size: 20px;
+    color: white;
+
+ }
+
+ button:hover{
+    background-color: #D96868;
+    transform: translateY(-2px);
+ }
+
+
+#popup{
+    width: 500px;
+    height: 500px;
+    background-color: #85C79A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 20px;
+    transform: translate(-50%,-50%);
+    top:50%;
+    left:50%;
+    z-index: 99;
+    transition: all 0.5s ease-in-out;
+    
+}
+
+
+@media(max-width:700px){
+   button{
+        width: 150px;
+        font-size: 15px;
+   }
+
+   .task_item{
+    width: 300px;
+   }
+}
+
