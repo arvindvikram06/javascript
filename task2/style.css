@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Doto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+    "ROND" 75;
+}
+
+
+body{
+    background-color: black;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.cal-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    padding: 30px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 1px 0px 20px rgb(255,255,255);
+}
+
+
+.cal-output{
+    width: 100%;
+    text-align: end;
+    padding: 5px;
+    font-size: 50px;
+    word-break: break-all;
+    word-wrap: break-word;
+    font-weight: bold;
+    color: white;
+}
+
+
+.calc-buttons{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+
+
+button{
+    text-align: center;
+    width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 30px;
+    box-shadow: 0.1px 0.1px 8px rgb(255,255,255);
+}
+
+.operator{
+    background-color: #FF5F00;
+    
+}
+
+.operator:hover{
+    background-color: #FE7743;
+
+}
+
+.non-op{
+    background-color: #C40C0C;
+    color: white;
+}
+
+.non-op:hover{
+    background-color: #8E1616;
+}
+
+.num{
+    background-color: black;
+    color: white;
+}
+.num:hover{
+    background-color: #1B211A;
+}
+
+.equals{
+    background-color: #08CB00;
+}
+
+.equals:hover{
+    background-color: #16FF00;
+}
+
+
+
+@media(max-width:700px){
+    .cal-container{
+        width: 300px;
+    }
+
+    button{
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+}
+
+
+
