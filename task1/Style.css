@@ -60,9 +60,6 @@ main li{
 
 
 
-
-
-
 input {
     border: 2px solid transparent;
     width: 250px;
@@ -91,6 +88,19 @@ input::placeholder {
 }
 
 
+
+
+p{  
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+
+.completed{
+    color: green;
+   
+}
+
 button{
     width: 150px;
     height: 50px;
@@ -112,6 +122,10 @@ button{
     transform: translateY(-2px);
  }
 
+
+ .striked{
+    text-decoration: line-through;
+ }
 
 #popup{
     width: 500px;

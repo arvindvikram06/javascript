@@ -59,6 +59,11 @@ function RenderTasks(){
             completeTask(index);
         })
 
+        if (task.isCompleted) {
+            p.classList.add("striked");
+        }
+
+
         const div = document.createElement("div");
 
         const updateTaskBtn = document.createElement("button")
@@ -89,6 +94,7 @@ function RenderTasks(){
 function completeTask(index) {
     console.log(index)
     tasks[index].isCompleted = !tasks[index].isCompleted;
+
     saveTask();
     RenderTasks();
 }
