@@ -1,0 +1,102 @@
+[
+    {
+        "question": "What is JavaScript?",
+        "options": [
+            "Programming Language",
+            "Database",
+            "Operating System",
+            "Browser"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which company developed JavaScript?",
+        "options": [
+            "Google",
+            "Microsoft",
+            "Netscape",
+            "Amazon"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which keyword is used to declare variables?",
+        "options": [
+            "var",
+            "int",
+            "string",
+            "float"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which method is used to print in console?",
+        "options": [
+            "console.log()",
+            "print()",
+            "echo()",
+            "log.console()"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which symbol is used for comments in JavaScript?",
+        "options": [
+            "//",
+            "/* */",
+            "#",
+            "<!-- -->"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which of the following is NOT a JavaScript data type?",
+        "options": [
+            "String",
+            "Boolean",
+            "Float",
+            "Undefined"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which function converts JSON to object?",
+        "options": [
+            "JSON.parse()",
+            "JSON.stringify()",
+            "parseJSON()",
+            "toObject()"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which event occurs when a button is clicked?",
+        "options": [
+            "onchange",
+            "onclick",
+            "onload",
+            "onhover"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which loop runs at least once?",
+        "options": [
+            "for",
+            "while",
+            "do...while",
+            "foreach"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which operator is used for strict equality?",
+        "options": [
+            "==",
+            "===",
+            "=",
+            "!="
+        ],
+        "answer": 1
+    }
+]
