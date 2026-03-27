@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <main>
+        <div class="container">
+            <div class="top_bar">
+                <h2 id="cityName">
+                    <i class="fa-solid fa-location-dot"></i>
+                    ---
+                </h2>
+            </div>
+            <div class="input_box">
+                <input type="text" id="city_input" placeholder="Enter city" />
+                <button id="search">Search</button>
+            </div>
+            <div class="hero_container">
+                <img id="mainIcon" src="" />
+                <h1 id="temp">--°C</h1>
+                <h2 id="condition">--</h2>
+
+                <div class="min_max_container">
+                    <p id="minTemp">Min: --</p>
+                    <p id="maxTemp">Max: --</p>
+                </div>
+
+                <div class="details_container">
+                    <div class="details_card">
+                        <img src="./assets/wind.png" />
+                        <p id="wind">--</p>
+                    </div>
+                    <div class="details_card">
+                        <img src="./assets/humidity.png" />
+                        <p id="humidity">--</p>
+                    </div>
+                </div>
+                <div class="today_weather">
+                    <div class="today_header">
+                        <h3>Today</h3>
+                        <h3 id="date"></h3>
+                    </div>
+
+                    <div class="card_container"></div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

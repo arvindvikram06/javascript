@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+main {
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 380px;
+    background: black;
+    color: white;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 1px 0px 30px rgb(255,255,255);
+}
+
+.top_bar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input_box {
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+}
+
+#city_input {
+    width: 200px;
+    height: 40px;
+    border-radius: 20px 0 0 20px;
+    border: none;
+    padding: 10px;
+}
+
+#search {
+    width: 80px;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+}
+
+.hero_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero_container img {
+    width: 120px;
+}
+
+.min_max_container {
+    display: flex;
+    gap: 20px;
+}
+
+.details_container {
+    display: flex;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.details_card {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.details_card img {
+    width: 20px;
+}
+
+
+.today_weather {
+    margin-top: 20px;
+    width: 100%;
+    border: 2px solid #333;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.today_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.scroll_controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.scroll_btn {
+    background: #2C2C2C;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+.card_container {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    margin-top: 10px;
+    scroll-behavior: smooth;
+}
+
+
+.card_container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.card_container::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 10px;
+}
+
+.card_container::-webkit-scrollbar-thumb {
+    background: #4facfe;
+    border-radius: 10px;
+}
+
+.card_container::-webkit-scrollbar-thumb:hover {
+    background: #00f2fe;
+}
+
+
+.today_card {
+    min-width: 80px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    transition: 0.2s;
+}
+
+.today_card:hover {
+    background: #2C2C2C;
+    border-radius: 10px;
+}
+
+.today_card img {
+    width: 50px;
+}
