@@ -1,13 +1,11 @@
 ## This repo contains my javascript learnings
 
 
-# 📘 JavaScript Deep Dive – Q&A
-
-> A complete collection of JavaScript concepts in **Question & Answer format**, covering core fundamentals, the Event Loop, async behavior, tricky interview questions, and output-based questions.
+# JavaScript Deep Dive
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 
 - [1. What is JavaScript?](#1-what-is-javascript)
 - [2. What does single-threaded mean?](#2-what-does-single-threaded-mean)
@@ -216,7 +214,7 @@ fn(); // 10
 
 ---
 
-## 14. 🔥 Closure Tricky Question
+## 14. Closure Tricky Question
 
 ```js
 for (var i = 0; i < 3; i++) {
@@ -225,7 +223,7 @@ for (var i = 0; i < 3; i++) {
 ```
 
 <details>
-<summary>💡 Output</summary>
+<summary> Output</summary>
 
 ```
 3
@@ -246,7 +244,7 @@ for (let i = 0; i < 3; i++) {
 ```
 
 <details>
-<summary>💡 Output</summary>
+<summary>Output</summary>
 
 ```
 0
@@ -273,7 +271,7 @@ var a = 10;
 
 ---
 
-## 16. 🔥 Hoisting Trap
+## 16. Hoisting Trap
 
 ```js
 console.log(a);
@@ -281,7 +279,7 @@ let a = 10;
 ```
 
 <details>
-<summary>💡 Output</summary>
+<summary>Output</summary>
 
 ```
 ReferenceError: Cannot access 'a' before initialization
@@ -307,7 +305,7 @@ Applies to `let` and `const`.
 
 ---
 
-## 19. 🔥 `this` Tricky
+## 19.`this` Tricky
 
 ```js
 const obj = {
@@ -321,7 +319,7 @@ obj.fn();
 ```
 
 <details>
-<summary>💡 Output</summary>
+<summary> Output</summary>
 
 ```
 JS
@@ -359,7 +357,7 @@ States:
 
 ---
 
-## 22. 🔥 Promise Chaining
+## 22. Promise Chaining
 
 ```js
 Promise.resolve(1)
@@ -368,7 +366,7 @@ Promise.resolve(1)
 ```
 
 <details>
-<summary>💡 Output</summary>
+<summary>Output</summary>
 
 ```
 2
@@ -440,7 +438,7 @@ console.log(4);
 ```
 
 <details>
-<summary>💡 Output</summary>
+<summary>Output</summary>
 
 ```
 1
