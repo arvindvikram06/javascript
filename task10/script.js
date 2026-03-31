@@ -1,3 +1,4 @@
+import { addToCart } from "./cart.js";
 let products = [];
 
 async function fetchProducts() {
@@ -22,18 +23,33 @@ function renderProducts(productArray) {
     product_sec.innerHTML = "";
 
     productArray.forEach(product => {
-        const div = document.createElement("div");
-        div.classList.add("product-card");
+        const container = document.createElement("div");
+        container.classList.add("product-card");
 
-        div.innerHTML = `
+        container.innerHTML = `
             <img src="${product.thumbnail}">
-            <h3>${product.title}</h3>
-            <p>$${product.price}</p>
-            <button onclick="addToCart(${product.id})">Add to Cart</button>
-            <button onclick="goToProduct(${product.id})">View</button>
+            <div>
+                <h3>${product.title}</h1>
+                <p class="price">$${product.price}</p>
+                <button class="addBtn">Add to Cart</button>
+                <button  class="view">View</button>
+            </div>
         `;
 
-        product_sec.appendChild(div);
+        container.querySelector(".addBtn").addEventListener("click", () => {
+            addToCart({
+                id: product.id,
+                title: product.title,
+                price: product.price,
+                thumbnail: product.thumbnail
+            });
+        });
+
+        container.querySelector(".view").addEventListener("click", () => {
+            goToProduct(product.id)
+        })
+
+        product_sec.appendChild(container);
     });
 }
 
@@ -71,6 +87,7 @@ function setupFilter() {
 }
 
 function goToProduct(id) {
+    console.log("called")
     window.location.href = `product.html?id=${id}`;
 }
 

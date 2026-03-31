@@ -1,3 +1,5 @@
+import { addToCart } from "./cart.js";
+
 async function renderProductDetail() {
     const container = document.querySelector(".product-detail");
     if (!container) return;
@@ -17,9 +19,18 @@ async function renderProductDetail() {
                 <h1>${product.title}</h1>
                 <p class="price">$${product.price}</p>
                 <p class="desc">${product.description}</p>
-                <button onclick="addToCart(${product.id})">Add to Cart</button>
+                <button id="addBtn">Add to Cart</button>
             </div>
         `;
+
+        document.getElementById("addBtn").addEventListener("click", () => {
+            addToCart({
+                id: product.id,
+                title: product.title,
+                price: product.price,
+                thumbnail: product.thumbnail
+            });
+        });
     } catch (err) {
         console.error(err);
     }

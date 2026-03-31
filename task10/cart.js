@@ -1,27 +1,23 @@
-
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function saveCart() {
     localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-
-function addToCart(id) {
-    const product = products.find(p => p.id === id);
-
-    const existing = cart.find(item => item.id === id);
+export function addToCart(product) {
+    const existing = cart.find(item => item.id === product.id);
 
     if (existing) {
-        existing.quantity += 1;
+        existing.quantity++;
     } else {
         cart.push({ ...product, quantity: 1 });
     }
 
     saveCart();
-    alert("Added to cart!");
+    alert("added to cart");
 }
 
-function renderCart() {
+export function renderCart() {
     const cartContainer = document.querySelector(".cart-items");
     const summary = document.querySelector(".cart-summary");
 
@@ -42,11 +38,26 @@ function renderCart() {
             <div>
                 <h3>${item.title}</h3>
                 <p>$${item.price}</p>
-                <input type="number" value="${item.quantity}" min="1"
-                    onchange="updateQuantity(${item.id}, this.value)">
-                <button onclick="removeItem(${item.id})">Remove</button>
+                <div>
+                    <button class="dec">-</button>
+                    <span class="qty">${item.quantity}</span>
+                    <button class="inc">+</button>
+                </div>
+                <button class="remove">Remove</button>
             </div>
         `;
+
+        div.querySelector(".inc").addEventListener("click", () => {
+            updateQuantity(item.id, '+');
+        });
+
+        div.querySelector(".dec").addEventListener("click", () => {
+            updateQuantity(item.id, '-');
+        });
+
+        div.querySelector(".remove").addEventListener("click", () => {
+            removeItem(item.id);
+        });
 
         cartContainer.appendChild(div);
     });
@@ -63,9 +74,17 @@ function renderCart() {
     `;
 }
 
-function updateQuantity(id, qty) {
+function updateQuantity(id, action) {
     const item = cart.find(i => i.id === id);
-    item.quantity = qty;
+    if (!item) return;
+
+    if (action === '+') item.quantity++;
+    if (action === '-') item.quantity--;
+
+    if (item.quantity <= 0) {
+        removeItem(id);
+        return;
+    }
 
     saveCart();
     renderCart();
@@ -76,6 +95,5 @@ function removeItem(id) {
     saveCart();
     renderCart();
 }
-
 
 renderCart();
