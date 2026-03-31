@@ -2,6 +2,9 @@ let currentIndex = 0;
 let score = 0;
 let selectedOption = null;
 
+const progress = JSON.parse(localStorage.getItem("quiz-progress")) || {currentIndex: 0 , score: 0};
+
+
 const questionEl = document.getElementById("question");
 const optionsEl = document.getElementById("options");
 const nextBtn = document.getElementById("nextBtn");
@@ -24,7 +27,7 @@ async function getQuizData(){
 }
 
 function loadQuestion() {
-    const q = questions[currentIndex];
+    const q = questions[progress.currentIndex];
     questionEl.textContent = q.question;
 
     optionsEl.innerHTML = "";
@@ -52,13 +55,15 @@ nextBtn.addEventListener("click", () => {
         return;
     }
 
-    if (selectedOption === questions[currentIndex].answer) {
-        score++;
+    if (selectedOption === questions[progress.currentIndex].answer) {
+        progress.score++;
     }
 
-    currentIndex++;
+    progress.currentIndex++;
 
-    if (currentIndex < questions.length) {
+    localStorage.setItem("quiz-progress",JSON.stringify(progress))
+
+    if (progress.currentIndex < questions.length) {
         loadQuestion();
     } else {
         showResult();
@@ -74,18 +79,32 @@ function showResult() {
 
     let feedback = "";
 
-    if (score === questions.length) {
+    if (progress.score === questions.length) {
         feedback = "outstanding!";
-    } else if (score >= 7) {
+    } else if (progress.score >= 7) {
         feedback = "great";
     } else {
         feedback = "Keep learning";
     }
-
+    console.log('last index');
     resultEl.innerHTML = `
-    <h2>Your Score: ${score}/${questions.length}</h2>
+    <h2>Your Score: ${progress.score}/${questions.length}</h2>
     <p>${feedback}</p>
+    <button onclick="retry()">Retry</button>
   `;
+}
+
+function retry() {
+    progress.currentIndex = 0;
+    progress.score = 0;
+
+    localStorage.removeItem("quiz-progress");
+    
+    questionEl.classList.remove("hidden");
+    optionsEl.classList.remove("hidden");
+    nextBtn.classList.remove("hidden");
+    resultEl.classList.add("hidden");
+    loadQuestion();
 }
 
 

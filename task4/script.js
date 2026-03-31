@@ -15,17 +15,29 @@ const humidity = document.getElementById("humidity");
 
 
 searchBtn.addEventListener("click", () => {
-    const city = cityInput.value.trim();
-
-    if (!city) {
-        alert("Enter city");
-        return;
-    }
-
-    fetchWeather(city);
-    fetchForecast(city);
+   findWeather(null);
 });
 
+
+
+document.addEventListener("keydown", (e) => {
+   findWeather(e.key);
+})
+
+
+function findWeather(value){
+    if (value === "Enter" || value == null) {
+        const city = cityInput.value.trim();
+
+        if (!city) {
+            alert("Enter city");
+            return;
+        }
+
+        fetchWeather(city);
+        fetchForecast(city);
+    }
+}
 
 async function fetchWeather(city) {
     try {
@@ -110,3 +122,5 @@ function updateForecastUI(list) {
         container.appendChild(card);
     });
 }
+
+
